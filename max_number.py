@@ -7,23 +7,29 @@
 import random
 
 
+def find_largest_num_array(num_array):
+    # Finds the largest number from a list of ten random numbers
+
+    largest_num = 0
+
+    for counter in range(0, len(num_array)):
+        if num_array[counter] > largest_num:
+            largest_num = num_array[counter]
+
+    return largest_num
+
+
 def main():
-    # this function uses an array
-    answer = 0
+    # Generates ten random numbers in an array and calls a function
 
-    random_numbers = []
-    # process
-    for loop_counter in range(0, 10):
-        a_random_number = random.randint(1, 100)  # a number between 1 and 100
-        print("The random number is: {0}".format(a_random_number))
-        random_numbers.append(a_random_number)
-    print("")
+    random_array = []
 
-    for loop_counter in range(0, len(random_numbers)):
-        answer = answer + random_numbers[loop_counter]
-    max_num = max(random_numbers)
-
-    print("\nThe largest number is: {0}".format(max_num))
+    for counter in range(0, 10):
+        random_num = random.randint(0, 100)
+        random_array.append(random_num)
+        print("The random number {0} is {1}".format(counter + 1, random_num))
+    largest_num_array = find_largest_num_array(random_array)
+    print("\nThe largest number is {}.".format(largest_num_array))
 
     print("\nDone.")
 
